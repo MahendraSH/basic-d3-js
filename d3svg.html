@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box d3</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.2/d3.min.js"></script>
+
+    <script >
+        // import { select } from "d3";
+// // import { d3-select } from "d3";
+
+const svgele =d3.select('body')
+.append('svg')
+.attr('height' ,innerHeight)
+.attr('width',innerWidth)
+
+
+
+ const n=100;
+             
+// console.log(d3.range(n))
+const marks=[];
+// for(let i=0;i<n;i++)
+// {
+//     marks.push(
+//         {
+//             y: i*20,
+//             height :10,
+//             width : innerWidth,
+
+//         }
+//     )
+// }
+
+// svgele
+//     .selectAll('rect')
+//     .data('marks')
+//     .join('rect')
+//     .attr('y',(d) => d.y)
+//     .attr('height',(d) => d.height)
+//     .attr('width',(d) => d.width);
+
+
+// svgele
+//   .selectAll('rect')
+//   .data(d3.range(n))
+//   .join('rect')
+//   .attr('y', (d) => d * 20)
+//   .attr('height', '10')
+//   .attr('width', innerWidth);
+
+svgele
+.selectAll('circle')
+.data(d3.range(n))
+.join('circle')
+.attr('cy',(d) => d*40)
+.attr('r','3')
+.attr('cx',(d)=> 20);
+svgele
+.selectAll('rect')
+.data(d3.range(n))
+.join('rect')
+.attr('x','40')
+.attr('y',(d)=> d *40)
+.attr('height','5')
+.attr('width',innerWidth)
+
+
+    </script>
+    
+</body>
+</html>
